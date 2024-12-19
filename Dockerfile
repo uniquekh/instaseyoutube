@@ -14,6 +14,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update && \
     apt-get install -y imagemagick
 
+# Copy token.pickle into the container (this is your OAuth token file)
+COPY token.pickle /app/token.pickle
+
 # Expose port 5000 (or whichever port you use for your bot)
 EXPOSE 5000
 
